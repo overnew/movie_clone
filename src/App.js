@@ -1,23 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+
+function Game({name}){
+  console.log(name);
+  return(
+    <h1>Did you play {name}?</h1>
+  );
+}
+
+const goty=[
+  {
+    name: "Red Death Redemption",
+    rank: 2
+  },
+  {
+    name: "JelDa",
+    rank: 1
+  },
+  {
+    name: "Persona 5 scremble",
+    rank: 0
+  }
+];
+
+function renderGame(){
+  
+}
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {goty.map( game => {return <Game name={game.name}></Game>})}
     </div>
   );
 }
